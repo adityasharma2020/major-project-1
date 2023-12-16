@@ -186,7 +186,9 @@ function generateComputerCircle() {
 	circle.appendChild(ringOuter);
 	circle.appendChild(rings);
 
-	optionsContainer.appendChild(circle);
+	setTimeout(() => {
+		optionsContainer.appendChild(circle);
+	}, 10);
 	return circle;
 }
 
