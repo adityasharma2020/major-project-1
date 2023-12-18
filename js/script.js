@@ -59,6 +59,7 @@ function resetGame() {
 	CLICKED_OPTION = '';
 	COMPUTER_OPTION = '';
 	nextButton.style.display = 'none';
+	playAgainButton.innerText = 'Play Again';
 	clicked = false;
 }
 
@@ -124,7 +125,7 @@ function handleClick(clickedOption) {
 			rings.classList.add('winner');
 			nextButton.style.display = 'block';
 		} else {
-			playAgainButton.innerText = 'REPLAY';
+			playAgainButton.innerText = 'Replay';
 		}
 
 		setTimeout(() => {
