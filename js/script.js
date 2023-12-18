@@ -12,6 +12,7 @@ const userTagline = document.querySelector('#userTagline');
 const computerTagline = document.querySelector('#computerTagline');
 const closeButton = document.querySelector('.closeButton');
 const nextButton = document.querySelector('.nextButton');
+const playAgainButton = document.querySelector('.result span');
 
 function handleRuleMenuClick() {
 	ruleBook.classList.toggle('open');
@@ -122,6 +123,8 @@ function handleClick(clickedOption) {
 			const rings = clickedCircle.querySelector('.rings');
 			rings.classList.add('winner');
 			nextButton.style.display = 'block';
+		} else {
+			playAgainButton.innerText = 'REPLAY';
 		}
 
 		setTimeout(() => {
