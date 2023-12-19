@@ -27,6 +27,7 @@ let PCScore = parseInt(localStorage.getItem('pc-score')) || 0;
 let userScore = parseInt(localStorage.getItem('user-score')) || 0;
 pcScoreBoard.innerText = PCScore;
 userScoreBoard.innerText = userScore;
+userScore > PCScore ? (nextButton.style.display = 'block') : (nextButton.style.display = 'none');
 
 function resetGame() {
 	const allCircles = document.querySelectorAll('.circle');
@@ -123,7 +124,6 @@ function handleClick(clickedOption) {
 			userScoreBoard.innerText = userScore;
 			const rings = clickedCircle.querySelector('.rings');
 			rings.classList.add('winner');
-			nextButton.style.display = 'block';
 		} else {
 			playAgainButton.innerText = 'Replay';
 		}
@@ -140,6 +140,9 @@ function handleClick(clickedOption) {
 				result_h2.innerText = '';
 			}
 			result.style.display = 'flex';
+			userScore > PCScore
+				? (nextButton.style.display = 'block')
+				: (nextButton.style.display = 'none');
 		}, 500);
 	}, 1000);
 }
